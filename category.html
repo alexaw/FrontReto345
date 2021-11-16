@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Category.js"></script>
+    <title>Categoria</title>
+    <link rel="stylesheet" href="Nueva carpeta/Semantic-UI-CSS-master/semantic.min.css">
+    <style type="text/css">
+        .full {
+            min-height: 80%;
+            background-image: url('img/skate.jpg');
+            background-size: cover;
+        }
+
+        .pheader.h1.ui.header {
+            margin-top: 20cm;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui green inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="category.html">
+            Categorias
+        </a>
+        <a class="item" href="skate.html">
+            Patinetas
+        </a>
+        <a class="item" href="client.html">
+            Clientes
+        </a>
+        <a class="item" href="message.html">
+            Mensajes
+        </a>
+        <a class="item" href="reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="reports.html">
+            Reportes
+        </a>
+    </div>
+
+    <div class="full">
+        <br><br><br><br>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Registro de Categorias</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="Cname" placeholder="name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="description">Descripcion</label>
+                        <input type="text" id="Cdescription" placeholder="description">
+                    </div> 
+                    <button onclick="traerInformacionCategorias()" class="ui purple button" > Consultar Categorias</button>
+                    <button onclick="guardarInformacionCategorias()" class="ui blue button" >Guardar Categorias </button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Informe de Categorias</h2>
+                <div id="resultado1"></div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</body>
+</html>
