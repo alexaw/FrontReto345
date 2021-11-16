@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/reports.js"></script>
+    <title>Message</title>
+    <link rel="stylesheet" href="Nueva carpeta/Semantic-UI-CSS-master/semantic.min.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/Message.js"></script>
+    <style type="text/css">
+        .full {
+            min-height: 80%;
+            background-image: url('img/skate.jpg');
+            background-size: cover;
+        }
+
+        .pheader.h1.ui.header {
+            margin-top: 20cm;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui green inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="category.html">
+            Categorias
+        </a>
+        <a class="item" href="skate.html">
+            Patinetas
+        </a>
+        <a class="item" href="client.html">
+            Clientes
+        </a>
+        <a class="item" href="message.html">
+            Mensajes
+        </a>
+        <a class="item" href="reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="reports.html">
+            Reportes
+        </a>
+    </div>
+    <div class="full">
+        <!--<h1 class="algo">Bienvenidos</h1>
+    <div class="ui stackable grid container centered">
+        <div class="ui text container">
+            <h1 class="ui header">Bienvenidos</h1>
+
+        </div>
+    </div>-->
+        <br><br><br><br>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Registro de Mensajes</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <label for="messagetext">Mensajes</label>
+                        <input type="text" id="messagetext" placeholder="messagetext">
+                    </div>
+                    <div class="field">
+                        <label for="client">Clientes</label>
+                        <select class="ui dropdown"  id="select-client">
+                            <option value="">Seleccione un Cliente</option>
+                        </select>
+                        <script type="text/javascript">
+                           window.onload = autoInicioRelacionCliente();;
+                        </script>
+                    </div>
+                    <div class="field">
+                        <label for="skate">Patinetas</label>
+                        <select class="ui dropdown" id="select-skate">
+                            <option value="">Seleccione una Patineta</option>
+                        </select>
+                        <script type="text/javascript">
+                            window.onload = autoInicioSkate();
+                        </script>
+                    </div>
+                    <button onclick="guardarInformacionMessage()" class="ui blue button" >Guardar Mensajes</button>
+                    <button onclick="autoInicioMensajes()" class="ui purple button" >Consultar Mensajes</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Informe de Mensajes</h2>
+                <div id="resultadoMensajes"></div>
+                <script type="text/javascript">
+                    window.onload = autoInicioMensajes();
+                </script>
+
+               
+            </div>
+        </div>
+        <div class="ui grid container">
+            <div class="row">
+    
+        </div>
+    </div>
+       
+</body>
+
+</html>

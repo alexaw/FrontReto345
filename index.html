@@ -1,21 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <script type="text/javascript" src="js/"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Reto345</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="Nueva carpeta/Semantic-UI-CSS-master/semantic.min.css">
+    <style type="text/css">
+        .full {
+            min-height: 100%;
+            background-image: url('img/skate.jpg');
+            background-size: cover;
+        }
+
+        .pheader.h1.ui.header {
+            margin-top: 40cm;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+    </style>
 </head>
+
 <body>
-    <h1> Categorias</h1>
-    <div id="resultado1"></div>
-    <button onclick="traerInformacionCategorias()" > Consultar Categorias</button>
-    
-    <div>
-        <input type="text" id="Cname" placeholder="name">
-        <input type="text" id="Cdescription" placeholder="description">
-       
-        
+    <div class="ui green inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="category.html">
+            Categorias
+        </a>
+        <a class="item" href="skate.html">
+            Habitaciones
+        </a>
+        <a class="item" href="client.html">
+            Clientes
+        </a>
+        <a class="item" href="message.html">
+            Mensajes
+        </a>
+        <a class="item" href="reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="reports.html">
+            Reportes
+        </a>
     </div>
-    <button onclick="guardarInformacionCategorias()">Guardar Categorias</button>
+
+    <div class="full">
+        <br><br><br><br>
+    </div>
 </body>
+
 </html>

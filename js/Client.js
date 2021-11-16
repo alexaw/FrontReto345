@@ -20,7 +20,7 @@ function pintarRespuesta(respuesta){
         myTable+="<td>"+respuesta[i].password+"</td>";
         myTable+="<td>"+respuesta[i].name+"</td>";
         myTable+="<td>"+respuesta[i].age+"</td>";
-        myTable+="<td> <button class='ui yellow button' onclick=' actualizarInformacionClientes("+respuesta[i].idClient+")'>Actualizar</button>";
+        myTable+="<td> <button class='ui green button' onclick=' actualizarInformacionClientes("+respuesta[i].idClient+")'>Actualizar</button>";
         myTable+="<td> <button class='ui yellow button' onclick=' cargarDatosClientes("+respuesta[i].idClient+")'>Editar</button>";
         myTable+="<td> <button class='ui red button' onclick='borrarClientes("+respuesta[i].idClient+")'>Borrar</button>";
         myTable+="</tr>";

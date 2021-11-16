@@ -23,7 +23,7 @@ function traerInformacionSkate() {
         datatype: "JSON",
         success: function (response) {
             console.log(response);
-            pintarRespuestaFarm(response);
+            pintarRespuestaSkate(response);
         }
     });
 }
@@ -31,7 +31,7 @@ function traerInformacionSkate() {
 function pintarRespuestaSkate(response){
 
     let myTable = "<table class='ui center aligned celled table'>" + 
-    "<thead><tr><th>NOMBRE GRANJA</th><th>DIRECCIÓN</th><th>EXTENSION</th><th>DESCRIPCION</th><th>NOMBRE CATEGORIA</th><th colspan='3'></th></tr></thead>";
+    "<thead><tr><th>NOMBRE</th><th>BRAND</th><th>YEAR</th><th>DESCRIPCION</th><th>NOMBRE CATEGORIA</th><th colspan='3'></th></tr></thead>";
     for(i=0;i<response.length;i++){
     myTable+="<tr>";
         myTable+="<td>" + response[i].name + "</td>";
@@ -39,9 +39,9 @@ function pintarRespuestaSkate(response){
         myTable+="<td>" + response[i].year + "</td>";
         myTable+="<td>" + response[i].description + "</td>";
         myTable+="<td>" + response[i].category.name + "</td>";
-        myTable+="<td> <button class='ui yellow button' onclick=' actualizarInformacionSkate("+respuesta[i].id+")'>Actualizar</button>";
-        myTable+="<td> <button class='ui yellow button' onclick=' cargarDatosSkate("+respuesta[i].id+")'>Editar</button>";
-        myTable+="<td> <button class='ui red button' onclick='borrarSkate("+respuesta[i].id+")'>Borrar</button>";
+        myTable+="<td><button class = 'ui green button' onclick='actualizarInformacionSkate("+response[i].id+")'>Actualizar</button>";
+        myTable+="<td><button class = 'ui yellow button' onclick='cargarDatosSkate("+response[i].id+")'>Editar</button>";
+        myTable+="<td><button class = 'ui red button' onclick='borrarSkate("+response[i].id+")'>Borrar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
@@ -74,7 +74,6 @@ function guardarInformacionSkate() {
     if($("#Skname").val().length == 0 || $("#Skbrand").val().length == 0 || $("#Skyear").val().length == 0 || $("#Skdescription").val().length == 0){
        alert("Todos los campos son obligatorios")
     }else{
-
             let elemento = {
                 name: $("#Skname").val(),
                 brand: $("#Skbrand").val(),
@@ -92,11 +91,10 @@ function guardarInformacionSkate() {
                 url:"http://150.230.91.74:8080/api/Skate/save",
                 data: dataToSend,
                 datatype: 'json',
-
                 success: function (response) {
                     console.log(response);
                     console.log("Se guardo correctamente la patineta");
-                    traerInformacionFarm();
+                    traerInformacionSkate();
                     $("#miListaSkate").empty();
                     $("#Skname").val("");
                     $("#Skbrand").val("");
@@ -136,7 +134,7 @@ function borrarSkate(idElemento) {
         });
 }
 
-function actualizar(idElemento) {
+function actualizarInformacionSkate(idElemento) {
     
     if($("#Skname").val().length == 0 || $("#Skbrand").val().length == 0 || $("#Skyear").val().length == 0 || $("#Skdescription").val().length == 0){
         alert("Todos los campos deben estar llenos")
@@ -171,7 +169,7 @@ function actualizar(idElemento) {
                 $("#Skbrand").val("");
                 $("#Skyear").val("");
                 $("#Skdescription").val("");
-
+                $("#select-category").val("");
 
             },
             error: function (jqXHR, textStatus, errorThrown) {
